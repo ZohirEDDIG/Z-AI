@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+    --color-dark-charcoal: #212121;
+    --color-rich-black: #171717;
+    --color-gunmetal: #333537
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+img, button, a {
+    cursor: pointer;
+    user-select: none;
+}
