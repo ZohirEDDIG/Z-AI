@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { SidebarHeader, SidebarActions, SidebarChats, SidebarLogin, SidebarProfile } from './sidebar/index';
+import { SidebarHeader, SidebarActions, SidebarChats, SidebarLogin, SidebarProfile } from '@/components/sidebar/index';
 
 export type ChatSettings = {
     chatId: null | number;

@@ -15,3 +15,7 @@ img, button, a {
     cursor: pointer;
     user-select: none;
 }
+
+input:focus {
+    outline: none;
+}
