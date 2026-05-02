@@ -1,59 +1,43 @@
-import { useState } from "react";
-import { IoPersonOutline, IoKeyOutline  } from "react-icons/io5";
-import { MdOutlineEmail } from "react-icons/md";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { Person, Email, Key, Eye, EyeSlash } from '@/icons';
 
 const RegisterForm = () => {
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
+    const inputContainerClassName: string = `
+        text-white px-4 py-2 border-[1.5px] border-gray-200 rounded-full flex items-center gap-x-3 
+        transition-all duration-300 ease-in-out focus-within:border-violet-300
+    `;
+
     return (
-        <form className="flex flex-col gap-y-3">
+        <form className='flex flex-col gap-y-3'>
 
-            <div className='text-white px-4 py-2 border-[1.5px] border-gray-300 rounded-full flex items-center gap-x-3 
-            transition-all duration-300 ease-in-out focus-within:border-violet-300'>
+            <div className={inputContainerClassName}>
 
-                <IoPersonOutline />
+                <Person />
                 
-                <input 
-                    type='text' 
-                    className='w-full' 
-                    placeholder='Full Name' 
-                />
+                <input type='text' className='w-full' placeholder='Full Name' />
 
             </div>
 
-            <div className='text-white px-4 py-2 border-[1.5px] border-gray-200 rounded-full flex items-center gap-x-3 
-            transition-all duration-300 ease-in-out focus-within:border-violet-300'>
+            <div className={inputContainerClassName}>
 
-                <MdOutlineEmail />
+                <Email />
 
-                <input 
-                    type='email' 
-                    className='w-full' 
-                    placeholder='Email' 
-                />
+                <input type='email' className='w-full' placeholder='Email' />
 
             </div>
 
-            <div className='text-white px-4 py-2 border-[1.5px] border-gray-200 rounded-full flex items-center gap-x-3 
-            transition-all duration-300 ease-in-out focus-within:border-violet-300'>
+            <div className={inputContainerClassName }>
 
-                <IoKeyOutline />
+                <Key />
 
-                <input 
-                    className='w-full' 
-                    type={isPasswordVisible ? 'text' : 'password'} 
-                    placeholder='Password'
-                />
+                <input type={isPasswordVisible ? 'text' : 'password'}  className='w-full' placeholder='Password' />
 
-                <button 
-                    type='button' 
-                    onClick={() => setIsPasswordVisible((prev) => !prev)}
-                    className='flex text-white transition-colors duration-300 ease-in-out' 
-                >
+                <button type='button' onClick={() => setIsPasswordVisible((prev) => !prev)} >
 
-                    {isPasswordVisible ?  <FaEye /> : <FaEyeSlash />}
+                    {isPasswordVisible ?  <Eye /> : <EyeSlash />}
 
                 </button>
 
@@ -70,7 +54,7 @@ const RegisterForm = () => {
 
             <p className='text-gray-500 text-sm text-center'>
                 
-                Already have an account? {" "}
+                Already have an account ? {' '}
                 
                 <Link to='/login' className='underline'>Login</Link>
              
