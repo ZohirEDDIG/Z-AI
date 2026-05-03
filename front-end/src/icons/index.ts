@@ -12,8 +12,14 @@ import {
     BsThreeDotsVertical as ThreeDotsVertical,
     BsFillPinFill as Pin,
 } from 'react-icons/bs';
-import { IoPersonOutline as Person, IoKeyOutline as Key } from 'react-icons/io5';
+import {
+    IoPersonOutline as Person,
+    IoKeyOutline as Key,
+} from 'react-icons/io5';
 import { MdOutlineEmail as Email } from 'react-icons/md';
+import { LuMessageCircleDashed as MessageCircleDashed } from 'react-icons/lu';
+import { IoIosAdd as Add } from 'react-icons/io';
+import { BiSolidMicrophone as Microphone } from 'react-icons/bi';
 
 export {
     LayoutSidebar,
@@ -28,5 +34,8 @@ export {
     Key,
     Email,
     Eye,
-    EyeSlash
+    EyeSlash,
+    MessageCircleDashed,
+    Add,
+    Microphone,
 };

@@ -1,15 +1,20 @@
 import { useEffect, useRef, useState } from 'react';
 import { SidebarHeader, SidebarActions, SidebarChats, SidebarLogin, SidebarProfile } from '@/components/sidebar/index';
+import { useWindowWidth } from '@/hooks';
+
+type SidebarProps = {
+    isSidebarOpen: boolean,
+    setIsSidebarOpen: React.Dispatch<React.SetStateAction<boolean>>
+};
 
 export type ChatSettings = {
     chatId: null | number;
     isVisible: boolean;
 };
 
-const Sidebar = () => {
-    const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(true);
+const Sidebar = ({ isSidebarOpen, setIsSidebarOpen }: SidebarProps) => {
     const [chatSettings, setChatSettings] = useState<ChatSettings>({ chatId : null, isVisible: false });
-
+    
     const chatSettingsRef = useRef<HTMLDivElement>(null);
     
     const isLoggedIn = true;
@@ -35,8 +40,19 @@ const Sidebar = () => {
 
     }, [chatSettingsRef, setChatSettings]);
 
+    const windowWidth: number = useWindowWidth();
+
+    useEffect(() => {
+        if (windowWidth <= 1024) {
+            setIsSidebarOpen(false);
+        }
+    }, [windowWidth]);
+
     return (
-        <aside className={`bg-rich-black  ${isSidebarOpen ? 'w-80' : 'w-14'} h-screen shrink-0 transition-all duration-300`}>
+        <aside 
+            className={`bg-rich-black  ${isSidebarOpen ? 'w-80' : 'w-14'} h-screen 
+            shrink-0 transition-all duration-300 max-lg:fixed`}
+        >
 
             <div className='h-full flex flex-col justify-between gap-y-6'>
 

@@ -16,6 +16,7 @@ img, button, a {
     user-select: none;
 }
 
-input:focus {
+input:focus,
+textarea:focus {
     outline: none;
 }
